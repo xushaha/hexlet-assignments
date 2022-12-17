@@ -6,7 +6,8 @@ public class ReversedSequence implements CharSequence{
         String text;
 
         public ReversedSequence(String input) {
-          this.text = input;
+            StringBuilder s = new StringBuilder(input);
+            this.text = s.reverse().toString();
         }
 
         @Override
@@ -22,12 +23,7 @@ public class ReversedSequence implements CharSequence{
         }
 
         public String toString() {
-                char[] toArray = this.text.toCharArray();
-                var result = "";
-                for (int i = (toArray.length - 1); i >=0 ; i--) {
-                        result = result + toArray[i];
-                }
-                return result;
+                return this.text;
         }
 
         @Override
@@ -39,5 +35,7 @@ public class ReversedSequence implements CharSequence{
                 }
                 return result;
         }
+
+
 }
 // END

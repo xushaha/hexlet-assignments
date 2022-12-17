@@ -78,7 +78,6 @@ class AppTest {
         CharSequence text = "abracadabra";
         String result = text.toString();
         String expected = "abracadabra";
-        System.out.println(text.toString());
         assertThat(result).isEqualTo(expected);
     }
 
@@ -90,6 +89,17 @@ class AppTest {
         assertThat(result).isEqualTo(expected);
     }
 
+    @Test
+    void testReversedSequence() {
+        CharSequence text = new ReversedSequence("abcdef");
+        assertThat(text.toString()).isEqualTo("fedcba");
 
+        assertThat(text.length()).isEqualTo(6);
+
+        assertThat(text.charAt(1)).isEqualTo('e');
+        assertThat(text.charAt(4)).isEqualTo('b');
+
+        assertThat(text.subSequence(1, 4).toString()).isEqualTo("edc");
+    }
     // END
 }
