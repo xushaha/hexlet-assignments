@@ -18,10 +18,10 @@ public class Circle {
         //Если радиус круга меньше нуля, метод должен выбросить исключение NegativeRadiusException
     public double getSquare() throws NegativeRadiusException {
         if (radius < 0) {
-             throw NegativeRadiusException.INVALID_RADIUS;
+            throw NegativeRadiusException.INVALID_RADIUS;
         } else {
-             return Math.PI * radius * radius;
-             }
+            return Math.PI * radius * radius;
+            }
     }
 }
 // END
