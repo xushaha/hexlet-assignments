@@ -13,6 +13,11 @@ class AppTest {
         });
         assertThat(result.trim()).isEqualTo("79\nВычисление окончено");
 
+        Circle circle1 = new Circle(new Point(2, 3), -5);
+        String result1 = tapSystemOut(() -> {
+            App.printSquare(circle1);
+        });
+        assertThat(result1.trim()).isEqualTo("Не удалось посчитать площадь\nВычисление окончено");
 
     }
 }
