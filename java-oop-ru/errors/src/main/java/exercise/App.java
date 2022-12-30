@@ -4,7 +4,8 @@ package exercise;
 public class App {
 
     public static void printSquare(Circle circle) throws NegativeRadiusException {
-        System.out.println((int) (circle.getSquare()));
+        double result = Math.ceil(circle.getSquare());
+        System.out.println((int) result);
         System.out.println("Вычисление окончено");
     }
 }
