@@ -25,7 +25,7 @@ public class InMemoryKV implements KeyValueStorage{
                 this.storage.remove(key);
         }
 
-        /*возвращает значение по указанному ключу. Если такого ключа в словаре нет, возвращает значение по умолчанию.*/
+        /*Возвращает значение по указанному ключу. Если такого ключа в словаре нет, возвращает значение по умолчанию.*/
         @Override
         public String get(String key, String defaultValue) {
                 return this.storage.getOrDefault(key, defaultValue);
