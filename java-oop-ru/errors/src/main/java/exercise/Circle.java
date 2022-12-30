@@ -21,7 +21,7 @@ public class Circle {
             throw NegativeRadiusException.INVALID_RADIUS;
         } else {
             return Math.PI * radius * radius;
-            }
+        }
     }
 }
 // END
