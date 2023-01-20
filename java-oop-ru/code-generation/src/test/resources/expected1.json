@@ -1,0 +1,12 @@
+{
+    "id":1,
+    "brand":"bmv",
+    "model":"x5",
+    "color":"black",
+    "owner":{
+        "id":1,
+        "firstName":"Ivan",
+        "lastName":"Petrov",
+        "age":25
+    }
+}
