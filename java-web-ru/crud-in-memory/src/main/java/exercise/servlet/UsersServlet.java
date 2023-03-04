@@ -161,7 +161,9 @@ public class UsersServlet extends HttpServlet {
             // Если данные не прошли валидацию выполняем редирект с кодом 422 на страницу создания новой компании
             RequestDispatcher requestDispatcher = request.getRequestDispatcher("/new.jsp");
             // Передаём туда введенные данные компании
-            request.setAttribute("user", users);
+            request.setAttribute("firstName", firstName);
+            request.setAttribute("lastName", lastName);
+            request.setAttribute("email", email);
             // И сообщение об ошибке
             request.setAttribute("error", "Имя пользователя не может быть пустым");
             response.setStatus(422);
@@ -209,23 +211,17 @@ public class UsersServlet extends HttpServlet {
         }
 
         // BEGIN
-        /*Метод updateUser() обрабатывает данные формы редактирования пользователя.
-        В методе реализуйте обновление данных пользователя. */
         String firstName = request.getParameter("firstName");
         String lastName = request.getParameter("lastName");
         String email = request.getParameter("email");
 
-        /*Проверьте корректность введенных данных пользователя.
-        Имя и фамилия пользователя не должны быть пустыми. Если введенные данные не корректны, установите код ответа 422
-        (Unprocessable Entity) и отобразите страницу редактирования пользователя, передав управление в файл /edit.jsp.
-        Чтобы на странице редактирования пользователя отобразить ошибку и заполнить поля формы данными,
-        вам потребуется передать в форму сообщение об ошибке и введенные данные пользователя.
-        */
         if (firstName.isEmpty() || lastName.isEmpty()) {
             // Если данные не прошли валидацию выполняем редирект с кодом 422 на страницу создания новой компании
             RequestDispatcher requestDispatcher = request.getRequestDispatcher("/edit.jsp");
             // Передаём туда введенные данные компании
-            request.setAttribute("user", users);
+            request.setAttribute("firstName", firstName);
+            request.setAttribute("lastName", lastName);
+            request.setAttribute("email", email);
             // И сообщение об ошибке
             request.setAttribute("error", "Имя пользователя не может быть пустым");
             response.setStatus(422);
@@ -234,11 +230,12 @@ public class UsersServlet extends HttpServlet {
         }
 
         /* Если данные корректны, скопируйте введенные данные из формы в сущность и сделайте редирект на страницу пользователя.*/
-        user.replace("firstName", firstName);
-        user.replace("lastName", lastName);
-        user.replace("email", email);
+        user.put("firstName", firstName);
+        user.put("lastName", lastName);
+        user.put("email", email);
         response.sendRedirect("/users/show?id=" + id);
         // END
+
     }
 
     private void deleteUser(HttpServletRequest request,

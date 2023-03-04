@@ -16,7 +16,7 @@
             <a href="/users">Все пользователи</a>
             <!-- BEGIN -->
             <div>${error}</div>
-            <form action="/users/new" method="post">
+            <form action="/users/edit?id=${user.get("id")}" method="post">
                 <div class="mb-3">
                     <label>Редактировать пользователя</label>
                     <label>Имя</label>

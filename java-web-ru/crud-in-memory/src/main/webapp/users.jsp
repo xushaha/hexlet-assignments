@@ -14,7 +14,7 @@
     <body>
         <div class="container">
             <a href="/users/new">Создать пользователя</a>
-            <table>
+            <table class="table">
                 <c:forEach var="user" items="${users}">
                     <tr>
                         <td>${user.get("id")}</td>

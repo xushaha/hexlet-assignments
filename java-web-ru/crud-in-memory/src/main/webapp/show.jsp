@@ -13,7 +13,7 @@
     <body>
         <div class="container">
             <a href="/users">Все пользователи</a>
-            <table>
+            <table class="table">
                 <tr>
                     <td>id: ${user.get("id")}</td>
                 </tr>
