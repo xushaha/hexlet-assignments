@@ -18,8 +18,9 @@ public class SessionServlet extends HttpServlet {
     private Users users = getUsers();
 
     @Override
-    public void doGet(HttpServletRequest request, HttpServletResponse response)
-                throws IOException, ServletException {
+    public void doGet(HttpServletRequest request,
+                      HttpServletResponse response)
+            throws IOException, ServletException {
 
         if (request.getRequestURI().equals("/login")) {
             showLoginPage(request, response);
@@ -30,30 +31,30 @@ public class SessionServlet extends HttpServlet {
     }
 
     @Override
-    public void doPost(HttpServletRequest request, HttpServletResponse response)
-                throws IOException, ServletException {
+    public void doPost(HttpServletRequest request,
+                       HttpServletResponse response)
+            throws IOException, ServletException {
 
         switch (request.getRequestURI()) {
             case "/login": login(request, response);
+                break;
             case "/logout": logout(request, response);
+                break;
             default: response.sendError(HttpServletResponse.SC_NOT_FOUND);
         }
     }
 
     private void showLoginPage(HttpServletRequest request,
                                HttpServletResponse response)
-                 throws IOException, ServletException {
+            throws IOException, ServletException {
 
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/login.jsp");
         requestDispatcher.forward(request, response);
     }
 
-
-
     private void login(HttpServletRequest request,
-                               HttpServletResponse response)
-                 throws IOException, ServletException {
-
+                       HttpServletResponse response)
+            throws IOException, ServletException {
 
         // BEGIN
             // Получение сессии
@@ -64,8 +65,6 @@ public class SessionServlet extends HttpServlet {
             // Получаем пользователя по логину
         Map<String, String> user = users.findByEmail(email);
 
-            // Если пользователь существует и введен верный пароль, установите в сессию атрибуты "userId"
-            // со значением id пользователя и "flash" со значением "Вы успешно вошли", затем выполните редирект на главную страницу /
         if (user != null && password.equals("password")) {
                 // Установка атрибутов сессии
                 // Вход в систему сводится к записи данных пользователя в сессию
@@ -87,8 +86,9 @@ public class SessionServlet extends HttpServlet {
         // END
     }
 
-    private void logout(HttpServletRequest request, HttpServletResponse response)
-                 throws IOException {
+    private void logout(HttpServletRequest request,
+                        HttpServletResponse response)
+            throws IOException {
 
         // BEGIN
         HttpSession session = request.getSession();
