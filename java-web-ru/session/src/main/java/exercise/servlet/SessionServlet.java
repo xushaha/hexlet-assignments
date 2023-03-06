@@ -79,7 +79,7 @@ public class SessionServlet extends HttpServlet {
             response.sendRedirect("/");
         } else {
             RequestDispatcher requestDispatcher = request.getRequestDispatcher("/login.jsp");
-            request.setAttribute("email", email);
+            request.setAttribute("user", user);
             session.setAttribute("flash", "Неверные логин или пароль");
             response.setStatus(422);
             requestDispatcher.forward(request, response);
