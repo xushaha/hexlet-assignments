@@ -44,7 +44,7 @@
             <div class="alert alert-info" role="alert">
                 ${sessionScope.flash}
             </div>
-            <% session.removeAttribute("attribute"); %>
+            <% session.removeAttribute("flash"); %>
             <!-- END -->
             <jsp:doBody />
         </div>
