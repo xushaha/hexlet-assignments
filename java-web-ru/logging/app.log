@@ -1,0 +1,46 @@
+Mar 06, 2023 7:43:19 PM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["http-nio-auto-1"]
+Mar 06, 2023 7:43:19 PM org.apache.tomcat.util.net.NioSelectorPool getSharedSelector
+INFO: Using a shared selector for servlet write/read
+Mar 06, 2023 7:43:19 PM org.apache.catalina.core.StandardService startInternal
+INFO: Starting service [Tomcat]
+Mar 06, 2023 7:43:19 PM org.apache.catalina.core.StandardEngine startInternal
+INFO: Starting Servlet engine: [Apache Tomcat/8.5.69]
+Mar 06, 2023 7:43:19 PM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["http-nio-auto-1-40293"]
+Mar 06, 2023 7:43:20 PM exercise.servlet.SessionServlet login
+INFO: Пользователь с почтой lavern.keeling@gmail.com входит в приложение
+Mar 06, 2023 7:43:20 PM exercise.servlet.SessionServlet login
+INFO: Пользователь с почтой shoshana.haley@hotmail.com входит в приложение
+Mar 06, 2023 7:43:20 PM exercise.servlet.SessionServlet login
+INFO: Пользователь с почтой suzann.barrows@hotmail.com входит в приложение
+Mar 06, 2023 7:43:20 PM exercise.servlet.SessionServlet login
+INFO: Пользователь с почтой lavern.keeling@gmail.com входит в приложение
+Mar 06, 2023 7:43:20 PM exercise.servlet.SessionServlet login
+INFO: Пользователь с почтой lavern.keeling@gmail.com входит в приложение
+Mar 06, 2023 7:43:21 PM exercise.servlet.SessionServlet login
+INFO: Пользователь с почтой lavern.keeling@gmail.com входит в приложение
+Mar 06, 2023 7:43:21 PM org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["http-nio-auto-1-40293"]
+Mar 06, 2023 7:43:21 PM org.apache.catalina.core.StandardService stopInternal
+INFO: Stopping service [Tomcat]
+Mar 06, 2023 7:43:21 PM org.apache.catalina.loader.WebappClassLoaderBase clearReferencesObjectStreamClassCaches
+WARNING: Failed to clear soft references from ObjectStreamClass$Caches for web application [ROOT]
+java.lang.ClassCastException: class java.io.ObjectStreamClass$Caches$1 cannot be cast to class java.util.Map (java.io.ObjectStreamClass$Caches$1 and java.util.Map are in module java.base of loader 'bootstrap')
+	at org.apache.catalina.loader.WebappClassLoaderBase.clearCache(WebappClassLoaderBase.java:2331)
+	at org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesObjectStreamClassCaches(WebappClassLoaderBase.java:2306)
+	at org.apache.catalina.loader.WebappClassLoaderBase.clearReferences(WebappClassLoaderBase.java:1675)
+	at org.apache.catalina.loader.WebappClassLoaderBase.stop(WebappClassLoaderBase.java:1605)
+	at org.apache.catalina.loader.WebappLoader.stopInternal(WebappLoader.java:455)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:5505)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1445)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1434)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+Mar 06, 2023 7:43:21 PM org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["http-nio-auto-1-40293"]
