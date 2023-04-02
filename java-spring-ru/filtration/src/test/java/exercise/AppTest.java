@@ -116,6 +116,30 @@ public class AppTest {
     // Тест для дополнительной задачи
     // BEGIN
 
+    /* Допишите тест, который проверит работу приложения при передаче полного набора параметров для фильтрации.
+    Перечень пользователей, которые загружаются в базу при тестировании, можно посмотреть
+    в файле src/test/resources/dataset/users.yml */
+
+    @Test
+     void testFilterByAll() throws Exception {
+        MockHttpServletResponse response = mockMvc
+                .perform(get("/users?firstName=a&lastName=o&profession=engineer&gender=Male"))
+                .andReturn()
+                .getResponse();
+
+        assertThat(response.getStatus()).isEqualTo(200);
+        assertThat(response.getContentType()).isEqualTo(MediaType.APPLICATION_JSON.toString());
+
+        List<User> actualUsers = objectMapper.readValue(
+                response.getContentAsString(),
+                new TypeReference<List<User>>() { }
+        );
+
+        User actualUser = actualUsers.get(0);
+        assertThat(actualUsers.size()).isEqualTo(1);
+        assertThat(actualUser.getFirstName()).isEqualTo("Sybila");
+        assertThat(actualUser.getLastName()).isEqualTo("Tomasino");
+    }
     
     // END
 }

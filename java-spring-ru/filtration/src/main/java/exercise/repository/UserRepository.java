@@ -1,7 +1,9 @@
 package exercise.repository;
 
+import com.querydsl.core.types.dsl.SimpleExpression;
+import com.querydsl.core.types.dsl.StringExpression;
 import exercise.model.User;
-// import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.querydsl.QuerydslPredicateExecutor;
 import org.springframework.data.querydsl.binding.QuerydslBinderCustomizer;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -23,7 +25,12 @@ public interface UserRepository extends
         // Дополнительная задача
 
         // BEGIN
-        
+        bindings.bind(user.firstName, user.lastName, user.email, user.profession)
+                .first(StringExpression::containsIgnoreCase);
+
+        bindings.bind(user.gender).first(SimpleExpression::eq);
+
+
         // END
     }
 
