@@ -3,7 +3,11 @@ package exercise;
 import java.time.LocalDateTime;
 
 // BEGIN
-import exercise.daytimes.*;
+import exercise.daytimes.Day;
+import exercise.daytimes.Daytime;
+import exercise.daytimes.Evening;
+import exercise.daytimes.Morning;
+import exercise.daytimes.Night;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -37,18 +41,4 @@ public class MyApplicationConfig {
 
 }
 
-
-
 // END
-
-
-/*  Добавьте нужные импорты
-
-    Используйте необходимые аннотации и сконфигурируйте приложение так, чтобы в зависимости
-    от времени суток в контекст добавлялся только определённый бин, который соответствует текущему времени суток:
-        Если сейчас утро (с 6 часов включительно до 12 часов), должен добавиться бин класса Morning
-        Если сейчас день (с 12 часов включительно до 18 часов), должен добавиться бин класса Day
-        Если сейчас вечер (с 18 часов включительно до 23 часов), должен добавиться бин класса Evening
-        Если сейчас ночь (с 23 часов включительно до 6 часов утра), должен добавиться бин класса Night
-
-Имя бина выберите по своему усмотрению */

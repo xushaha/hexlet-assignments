@@ -3,7 +3,6 @@ package exercise;
 import javax.annotation.PostConstruct;
 
 // BEGIN
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 // Аннотация @Configuration указывает, что класс содержит методы, создающие бины
