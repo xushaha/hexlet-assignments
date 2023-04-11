@@ -19,7 +19,8 @@ public class WelcomeController {
 
     @GetMapping("/daytime")
     public String root() {
-        return "It is " + MyApplicationConfig.time() + " now. Enjoy your " + meal.getMealForDaytime(daytime.getName());
+
+        return "It is " + daytime.getName() + " now. Enjoy your " + meal.getMealForDaytime(daytime.getName());
     }
 }
 
